@@ -1,4 +1,1 @@
-alert('Hello world . . . please have a look at this webpage for our weekly special');
-
-let favoriteFood = 'Lasagne'
-document.write(favoriteFood)
+let pokemonList = ("Charizard", height = 1.7, type = ['fire','flying'])("Staryu", height = 0.8, type = ['water'])("Onix", height = 8.8, type = ['rock','ground'])("Starmie", height = 1.1, type = ['psychic','water'])
