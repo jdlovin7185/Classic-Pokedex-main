@@ -5,12 +5,12 @@ let pokemonList = [
 {name: "Starmie", height: 1.1, type: ['psychic','water'] }
 ];
 
-for (let i=0; i < pokemonList.length; i++){
-  if (pokemonList[i].height <20 && pokemonList[i].height >1.6){
-    document.write(pokemonList[i].name + " height: " + pokemonList[i].height + " That's a big dude . . . ");
-  }else if (pokemonList[i].height <1) {
-    document.write(pokemonList[i].name + " height: " + pokemonList[i].height + " Dog friendly ");
+pokemonList.forEach(function(pokemon) {
+  if (pokemon.height <20 && pokemon.height >1.6){
+    document.write(pokemon.name + " height: " + pokemon.height + " That's a big dude . . . ");
+  }else if (pokemon.height <1) {
+    document.write(pokemon.name + " height: " + pokemon.height + " Dog friendly ");
   }else {
-    document.write(pokemonList[i].name + " Kinda big but not really, probably would mess your day up ");
+    document.write(pokemon.name + " Kinda big but not really ");
   }
-}
+})
