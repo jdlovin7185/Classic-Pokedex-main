@@ -20,7 +20,7 @@ let pokemonRepository = (function () {
 })();
 
 
-pokemonRepository.getAll(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
   if (pokemon.height <20 && pokemon.height >1.6){
     document.write(pokemon.name + " height: " + pokemon.height + " That's a big dude . . . ");
   }else if (pokemon.height <1) {
