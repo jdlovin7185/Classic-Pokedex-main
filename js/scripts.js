@@ -13,20 +13,34 @@ let pokemonRepository = (function () {
    return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    let ul = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('buttons');
+    listItem.appendChild(button);
+    ul.appendChild(listItem);
+    button.addEventListener('click', function (event) {
+      showDetails(pokemon);
+
+    });
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
   return {
     add: add,
-    getAll:getAll
+    getAll:getAll,
+    addListItem: addListItem,
+    showDetails: showDetails,
   };
 })();
 
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  if (pokemon.height <20 && pokemon.height >1.6){
-    document.write(pokemon.name + " height: " + pokemon.height + " That's a big dude . . . ");
-  }else if (pokemon.height <1) {
-    document.write(pokemon.name + " height: " + pokemon.height + " Dog friendly ");
-  }else {
-    document.write(pokemon.name + " In between ");
-  }
+  pokemonRepository.addListItem(pokemon);
 })
 

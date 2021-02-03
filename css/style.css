@@ -1,3 +1,21 @@
 * {
   border: border-box;
 }
+
+.pokemon-list {
+  list-style-type: none;
+  text-align: center;
+}
+
+.buttons {
+  background-color:cornflowerblue;
+  width: 50%;
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.buttons:hover {
+  color: 1px 0.4s;
+}
