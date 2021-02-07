@@ -1,7 +1,17 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    
+  
+
+  function showModal() {
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.add('is-visible');
+
+    document.querySelector('#show-modal').addEventListener('click', () => {
+      showModal();
+    });
+  }
+// The test area - - - - -  - - - - - - - - - - -  - - - - -- -  --  -
   function add(pokemon) {
     if (
       typeof pokemon === "object" && "name"in pokemon
@@ -32,6 +42,9 @@ let pokemonRepository = (function () {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
+    let pokeName = pokemon.name;
+    let pokeHeight = pokemon.height;
+    let PokeType = pokemon.type;
     console.log(pokemon);
     });
   }
@@ -66,9 +79,13 @@ let pokemonRepository = (function () {
     });
   }
 
+  
+  
+
   return {
     add: add,
     getAll:getAll,
+    showModal: showModal,
     addListItem: addListItem,
     showDetails: showDetails,
     loadList: loadList,
