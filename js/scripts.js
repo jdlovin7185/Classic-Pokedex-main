@@ -6,10 +6,7 @@ let pokemonRepository = (function () {
   function showModal() {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
-
-    document.querySelector('#show-modal').addEventListener('click', () => {
-      showModal();
-    });
+    showDetails(pokemon);
   }
 // The test area - - - - -  - - - - - - - - - - -  - - - - -- -  --  -
   function add(pokemon) {
@@ -36,17 +33,15 @@ let pokemonRepository = (function () {
     ul.appendChild(listItem);
     button.addEventListener('click', function (event) {
       showDetails(pokemon);
-
     });
   }
 
   function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
-    let pokeName = pokemon.name;
-    let pokeHeight = pokemon.height;
-    let PokeType = pokemon.type;
-    console.log(pokemon);
-    });
+      //update the html modal dom
+      let pokeName = document.querySelector('.pokeName');
+      pokeName.querySelector('h1');
+      pokeName.innerText = pokemon.name;
+      console.log('Hey Im in the modal', pokemon);
   }
 
   function loadList() {
@@ -70,10 +65,13 @@ let pokemonRepository = (function () {
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
+
       // Now we add the details to the item
-      item.imageUrl = details.sprites.front_default;
-      item.height = details.height;
-      item.types = details.types;
+      // Move to the modal
+         // item.imageUrl = details.sprites.front_default;
+         // item.height = details.height;
+         // item.types = details.types;
+      showModal(details)
     }).catch(function (e) {
       console.error(e);
     });
