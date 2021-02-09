@@ -7,6 +7,7 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
     showDetails(pokemon);
+    modalContainer.appendChild(pokeName);
   }
 // The test area - - - - -  - - - - - - - - - - -  - - - - -- -  --  -
   function add(pokemon) {
@@ -41,7 +42,6 @@ let pokemonRepository = (function () {
       let pokeName = document.querySelector('.pokeName');
       pokeName.querySelector('h1');
       pokeName.innerText = pokemon.name;
-      console.log('Hey Im in the modal', pokemon);
   }
 
   function loadList() {
