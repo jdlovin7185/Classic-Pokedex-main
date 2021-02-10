@@ -3,21 +3,38 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   
 
-  function showModal() {
+  function showModal(pokemon) {
+    let name = document.querySelector('.pokeName');
+    let height = document.querySelector('.pokeHeight');
+    let image = document.querySelector('.pokeImage');
+    name.innerText = '';
+    height.innerText = 'Height: ' ;
+    image.src = '';
+
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
-    showDetails(pokemon);
-    modalContainer.appendChild(pokeName);
+
+    name.innerText = pokemon.name;
+    height.innerText = 'Height: ' + pokemon.height;
+    image.src = pokemon.sprites.front_default;
+
+    let button = document.querySelector('.modal-close');
+
+    button.addEventListener('click', function (event) {
+      modalContainer.classList.remove('is-visible');
+    });
   }
 // The test area - - - - -  - - - - - - - - - - -  - - - - -- -  --  -
+
+
   function add(pokemon) {
     if (
-      typeof pokemon === "object" && "name"in pokemon
+      typeof pokemon === "object" && "name" in pokemon
     ) {
-   pokemonList.push(pokemon);
-  } else {
-    console.log("pokemon is not correct")
-  }
+    pokemonList.push(pokemon);
+    } else {
+      console.log("pokemon is not correct")
+    }
   }
   
   function getAll() {
@@ -33,15 +50,8 @@ let pokemonRepository = (function () {
     listItem.appendChild(button);
     ul.appendChild(listItem);
     button.addEventListener('click', function (event) {
-      showDetails(pokemon);
+      loadDetails(pokemon);
     });
-  }
-
-  function showDetails(pokemon) {
-      //update the html modal dom
-      let pokeName = document.querySelector('.pokeName');
-      pokeName.querySelector('h1');
-      pokeName.innerText = pokemon.name;
   }
 
   function loadList() {
@@ -82,10 +92,9 @@ let pokemonRepository = (function () {
 
   return {
     add: add,
-    getAll:getAll,
+    getAll: getAll,
     showModal: showModal,
     addListItem: addListItem,
-    showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
   };
