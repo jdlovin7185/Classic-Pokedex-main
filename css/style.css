@@ -18,6 +18,15 @@
 
 .buttons:hover {
   color: 1px 0.4s;
+  cursor: pointer;
+}
+
+.pokeHeight {
+  text-align: center;
+}
+
+*img {
+  text-align: center;
 }
 
 html, 
@@ -34,6 +43,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+
   
   /* to show it above other content */
   z-index: 999; 
@@ -82,3 +92,4 @@ body {
   /* CSS for modal container - add your own desired CSS styles here */
   display: block;
 }
+
