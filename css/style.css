@@ -21,6 +21,9 @@
   cursor: pointer;
 }
 
+.photo {
+  text-align: center;
+}
 
 .pokeName {
   text-align: center;
