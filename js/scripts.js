@@ -6,16 +6,19 @@ let pokemonRepository = (function () {
   function showModal(pokemon) {
     let name = document.querySelector('.pokeName');
     let height = document.querySelector('.pokeHeight');
+    let weight = document.querySelector('.pokeWeight');
     let image = document.querySelector('.pokeImage');
     name.innerText = '';
     height.innerText = 'Height: ' ;
+    weight.innerText = 'Weight: ';
     image.src = '';
 
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
 
     name.innerText = pokemon.name;
-    height.innerText = 'Height: ' + pokemon.height;
+    height.innerText = 'Height: ' + pokemon.height + ' m';
+    weight.innerText = 'Weight: ' + pokemon.weight + ' kilograms';
     image.src = pokemon.sprites.front_default;
 
     let button = document.querySelector('.modal-close');
@@ -74,14 +77,14 @@ let pokemonRepository = (function () {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
-    }).then(function (details) {
+    }).then(function (pokemon) {
 
       // Now we add the details to the item
       // Move to the modal
          // item.imageUrl = details.sprites.front_default;
          // item.height = details.height;
          // item.types = details.types;
-      showModal(details)
+      showModal(pokemon)
     }).catch(function (e) {
       console.error(e);
     });
