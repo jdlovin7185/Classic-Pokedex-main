@@ -9,20 +9,45 @@
   </head>
   <body>
     <!-- #1 Replace <ul>element</ul> -->
-    <ul id='show-model' class='pokemon-list'></ul>
+    <ul id='show-model' class='pokemon-list list-group'></ul>
     <!-- #2 Area to replace modal  -->
-    <div id='modal-container'>
-      <div class='modal'>
-        <!-- Replace button with bootstrap  -->
-        <button class='modal-close'>Close</button>
-        <h2 class="pokeName"></h2>
-        <div class="photo">
-          <img src"" class="pokeImage"/>
-        </div>  
-        <h4 class="pokeHeight"></h4>
-        <h4 class="pokeWeight"></h4>
+    <div class="modal" id="modal-container" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title pokeName"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- Pokemon info -->
+          <div class="modal-body">
+            <div class="photo">
+              <img src"" class="pokeImage"/>
+             </div>  
+            <h4 class="pokeHeight"></h4>
+            <h4 class="pokeWeight"></h4>
+          </div>
+          <!-- end of info -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>  
+        </div>
       </div>
     </div>
+    <!-- End of new modal  -->
+    <!-- <div id='modal-container'> -->
+      <!-- <div class='modal'> -->
+        <!-- Replace button with bootstrap  -->
+        <!-- <button class='modal-close'>Close</button> -->
+        <!-- <h2 class="pokeName"></h2> -->
+        <!-- <div class="photo"> -->
+          <!-- <img src"" class="pokeImage"/> -->
+        <!-- </div>   -->
+        <!-- <h4 class="pokeHeight"></h4>
+        <h4 class="pokeWeight"></h4> -->
+      <!-- </div> -->
+    <!-- </div> --> 
     <!-- End modal  -->
     <strong>
       <script src="js/promise-polyfill.js"></script>
