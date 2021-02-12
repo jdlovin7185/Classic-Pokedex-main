@@ -27,7 +27,7 @@ let pokemonRepository = (function () {
       modalContainer.classList.remove('is-visible');
     });
   }
-// The test area - - - - -  - - - - - - - - - - -  - - - - -- -  --  -
+
 
 
   function add(pokemon) {
