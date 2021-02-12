@@ -21,19 +21,7 @@
   cursor: pointer;
 }
 
-.photo {
-  text-align: center;
-}
-
-.pokeName {
-  text-align: center;
-}
-
-.pokeHeight {
-  text-align: center;
-}
-
-.pokeWeight {
+.center {
   text-align: center;
 }
 
