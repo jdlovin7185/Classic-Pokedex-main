@@ -21,7 +21,7 @@ let pokemonRepository = (function () {
     weight.innerText = 'Weight: ' + pokemon.weight + ' kilograms';
     image.src = pokemon.sprites.front_default;
 
-    let button = document.querySelector('.modal-close');
+    let button = document.querySelector('.close');
 
     button.addEventListener('click', function (event) {
       modalContainer.classList.remove('is-visible');
