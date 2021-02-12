@@ -7,6 +7,22 @@
     <link href="css/style.css" rel="stylesheet">
     <title>Simple JS App</title>
   </head>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">PokeDex</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Pokemon <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">Map</a>
+          <a class="nav-item nav-link" href="#">Source Code</a>
+          <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+      </div>
+    </nav>
+  </header>
   <body>
     <!-- #1 Replace <ul>element</ul> -->
     <ul id='show-model' class='pokemon-list list-group'></ul>
