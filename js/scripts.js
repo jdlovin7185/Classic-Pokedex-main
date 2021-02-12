@@ -18,16 +18,20 @@ let pokemonRepository = (function () {
 
     name.innerText = pokemon.name;
     height.innerText = 'Height: ' + pokemon.height + ' m';
-    weight.innerText = 'Weight: ' + pokemon.weight + ' kilograms';
-    image.src = pokemon.sprites.front_default;
+    weight.innerText = 'Weight: ' + pokemon.weight / 10 + ' kg';
+    image.src = pokemon.sprites.other.dream_world.front_default;
+    image.classList.add('img-fluid');
+    image.classList.add('mb-2');
+    name.classList.add('text-capitalize');
+
 
     let button = document.querySelector('.close');
-
+  
+  
     button.addEventListener('click', function (event) {
       modalContainer.classList.remove('is-visible');
     });
   }
-
 
 
   function add(pokemon) {
@@ -50,6 +54,9 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('buttons');
+    button.classList.add('btn');
+    button.classList.add('group-list-item');
+    button.classList.add('text-capitalize')
     listItem.appendChild(button);
     ul.appendChild(listItem);
     button.addEventListener('click', function (event) {
@@ -79,11 +86,6 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (pokemon) {
 
-      // Now we add the details to the item
-      // Move to the modal
-         // item.imageUrl = details.sprites.front_default;
-         // item.height = details.height;
-         // item.types = details.types;
       showModal(pokemon)
     }).catch(function (e) {
       console.error(e);
@@ -108,4 +110,5 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
 
