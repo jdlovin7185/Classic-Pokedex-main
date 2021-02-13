@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
-    <title>Simple JS App</title>
+    <title>PokeDex</title>
   </head>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">PokeDex</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,15 +18,16 @@
           <a class="nav-item nav-link active" href="#">Pokemon <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#">Map</a>
           <a class="nav-item nav-link" href="#">Source Code</a>
-          <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
       </div>
     </nav>
   </header>
   <body>
-    <!-- #1 Replace <ul>element</ul> -->
     <ul id='show-model' class='pokemon-list list-group'></ul>
-    <!-- #2 Area to replace modal  -->
     <div class="modal" id="modal-container" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -47,12 +48,13 @@
           </div>
           <!-- end of info -->
           <div class="modal-footer">
+            <!-- Fix this button  -->
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>  
         </div>
       </div>
     </div>
-    <!-- End of new modal  -->
+    <!-- End of modal  -->
     <strong>
       <script src="js/promise-polyfill.js"></script>
       <script src="js/fetch-polyfill.js"></script>
