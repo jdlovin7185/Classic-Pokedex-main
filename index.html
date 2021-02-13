@@ -8,8 +8,8 @@
     <title>PokeDex</title>
   </head>
   <header>
-    <nav class="navbar fixed-top navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+    <nav class="navbar fixed-top navbar-light" style="background-color: red;">
+      <a class="navbar-brand" href="index.html">
         <img src="img/pokeball.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         PokeDex
       </a>
@@ -18,14 +18,11 @@
   <body>
     <ul id='show-model' class='pokemon-list list-group'></ul>
     <div class="modal" id="modal-container" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <!-- Pokemon name  -->
             <h3 class="pokeName"></h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
           <!-- Pokemon info -->
           <div class="modal-body">
